@@ -38,8 +38,10 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "pnpm"
+          cache-dependency-path: gui/pnpm-lock.yaml
 
       - name: Install app dependencies and build web
+        working-directory: ./gui
         run: pnpm && pnpm build
 
       - name: Build the app
@@ -53,3 +55,4 @@ jobs:
           releaseBody: "See the assets to download and install this version."
           releaseDraft: true
           prerelease: false
+          projectPath: ./gui
