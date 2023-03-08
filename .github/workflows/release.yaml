@@ -8,7 +8,6 @@ on:
 jobs:
   release:
     strategy:
-      fail-fast: false
       matrix:
         platform: [macos-latest, ubuntu-20.04, windows-latest]
     runs-on: ${{ matrix.platform }}
