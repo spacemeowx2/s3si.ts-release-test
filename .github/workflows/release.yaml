@@ -40,9 +40,9 @@ jobs:
           cache: "pnpm"
           cache-dependency-path: gui/pnpm-lock.yaml
 
-      - name: Install app dependencies and build web
+      - name: Install app dependencies
         working-directory: ./gui
-        run: pnpm && pnpm build
+        run: pnpm i
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
