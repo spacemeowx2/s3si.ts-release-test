@@ -15,7 +15,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ~/.deno
-          key: ${{ runner.os }}-deno-${{ hashFiles('deno.lock') }}
+          key: ${{ runner.os }}-${{ matrix.platform }}-deno-${{ hashFiles('deno.lock') }}
       - name: Check fmt
         run: deno fmt --check
       - name: Run lint
